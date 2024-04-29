@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Thank you for doing the survey!!</h1>
+
+    <p>Here are your responses:</p>
+
+    <ul>
+        {% for response in responses %}
+            <li> {{ response }} </li>    
+        {% endfor %}
+    </ul>
+</form>
+{% endblock %}

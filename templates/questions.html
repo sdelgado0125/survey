@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ current_question.question }}</h1>
+
+<form action="{{ url_for('question', question_number=question_number) }}" method="POST">
+    {% if question_number == 3 %}
+        <textarea name="answer" rows="4" cols="50"></textarea>
+    {% else %}
+        {% for choice in current_question.choices %}
+            <input type="radio" name="answer" value="{{ choice }}"> {{ choice }}<br>
+        {% endfor %}
+    {% endif %}
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

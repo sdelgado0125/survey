@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Customer Satisfaction Survey {% endblock %}</title>
+</head>
+<body>
+    <div id="container">
+        {% block content %}
+        <h1>Welcome!</h1>
+        <h3>We hope you had a great day! Would you like to take our survey?</h3>
+        <form action="{{ url_for('start_survey') }}" method="POST">
+            <button type="submit">Start Survey</button>
+        </form>
+        {% endblock %}
+    </div>
+    
+</body>
+</html>
